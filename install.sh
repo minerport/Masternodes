@@ -6,21 +6,16 @@ show_menu(){
     FGRED=`echo "\033[41m"`
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
+    echo =e "${MENU}**********PLEASE CHOOSE YOUR COIN************${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Mount dropbox ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Mount USB 500 Gig Drive ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 3)${MENU} Restart Apache ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 4)${MENU} ssh Frost TomCat Server ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 5)${MENU} ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} MOGWAI ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} MOONDEX ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} DRIP ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} MCT+ ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
-}
-function option_picked() {
-    COLOR='\033[01;31m' # bold red
-    RESET='\033[00;00m' # normal white
-    MESSAGE=${@:-"${RESET}Error: No message passed"}
-    echo -e "${COLOR}${MESSAGE}${RESET}"
 }
 
 clear
