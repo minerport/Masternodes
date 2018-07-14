@@ -11,7 +11,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 1)${MENU} MOGWAI ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} MOONDEX ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} DRIP ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 4)${MENU} MCT+ ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} RABBIT ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
@@ -28,27 +28,34 @@ while [ opt != '' ]
         case $opt in
         1) clear;
         option_picked "Option 1 Picked";
-        sudo bash /root/Masternodes/installs/Mogwai.sh
+        sudo bash /root/Masternodes/installs/Mogwai.sh;
         menu;
         ;;
 
         2) clear;
             option_picked "Option 2 Picked";
-            sudo mount /dev/sdi1 /mnt/usbDrive; #The 500 gig drive
+            sudo bash /root/Masternodes/installs/Moondex.sh;
         menu;
             ;;
 
         3) clear;
             option_picked "Option 3 Picked";
-        sudo service apache2 restart;
+        sudo bash /root/Masternodes/installs/Drip.sh;
             show_menu;
             ;;
 
         4) clear;
             option_picked "Option 4 Picked";
-        ssh lmesser@ -p 2010;
+        sudo bash /root/Masternodes/installs/Rabbit.sh;
             show_menu;
             ;;
+
+        5) clear;
+            option_picked "Option 5 Picked";
+        sudo bash /root/Masternodes/installs/BTCMonster.sh
+            show_menu;
+            ;;
+
 
         x)exit;
         ;;
