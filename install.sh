@@ -28,7 +28,7 @@ while [ opt != '' ]
         case $opt in
         1) clear;
         option_picked "Option 1 Picked";
-        sudo bash /root/Masternodes/installs/Mogwai3.sh
+        sudo bash /root/Masternodes/installs/Mogwai.sh
         menu;
         ;;
 
