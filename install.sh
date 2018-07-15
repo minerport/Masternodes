@@ -13,6 +13,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 3)${MENU} DRIP ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} RABBIT ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} RANE ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
@@ -53,6 +54,12 @@ while [ opt != '' ]
         5) clear;
             option_picked "Option 5 Picked";
         sudo bash /root/Masternodes/installs/BTCMonster.sh
+            show_menu;
+            ;;
+
+        6) clear;
+            option_picked "Option 6 Picked";
+        sudo bash /root/Masternodes/installs/Rane.sh
             show_menu;
             ;;
 
