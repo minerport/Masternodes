@@ -14,6 +14,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 4)${MENU} RABBIT ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 6)${MENU} RANE ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 7)${MENU} DEXTRO ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
@@ -30,13 +31,13 @@ while [ opt != '' ]
         1) clear;
         option_picked "Option 1 Picked";
         sudo bash /root/Masternodes/installs/Mogwai.sh;
-        menu;
+            show_menu;
         ;;
 
         2) clear;
             option_picked "Option 2 Picked";
-            sudo bash /root/Masternodes/installs/Moondex.sh;
-        menu;
+        sudo bash /root/Masternodes/installs/Moondex.sh;
+            show_menu;
             ;;
 
         3) clear;
@@ -62,7 +63,11 @@ while [ opt != '' ]
         sudo bash /root/Masternodes/installs/Rane.sh
             show_menu;
             ;;
-
+        7) clear;
+            option_picked "Option 7 Picked";
+        sudo bash /root/Masternodes/installs/Dextro.sh
+            show_menu;
+            ;;
 
         x)exit;
         ;;
