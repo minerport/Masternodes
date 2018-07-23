@@ -71,7 +71,7 @@ while [ opt != '' ]
             ;;
         8) clear;
             option_picked "Bhash Masternode Picked";
-        sudo bash /root/Masternodes/installs/Dextro.sh
+        sudo bash /root/Masternodes/installs/Bhash.sh
             show_menu;
             ;;
 
