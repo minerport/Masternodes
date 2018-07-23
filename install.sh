@@ -15,8 +15,9 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 6)${MENU} RANE ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 7)${MENU} DEXTRO ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 8)${MENU} BHASH ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
+    echo -e "${ENTER_LINE}Please choose a Masternode to install and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
 }
 
@@ -29,45 +30,51 @@ while [ opt != '' ]
     else
         case $opt in
         1) clear;
-        option_picked "Option 1 Picked";
+        option_picked "Mogwai Masternode Picked";
         sudo bash /root/Masternodes/installs/Mogwai.sh;
             show_menu;
         ;;
 
         2) clear;
-            option_picked "Option 2 Picked";
+            option_picked "Moondex Masternode Picked";
         sudo bash /root/Masternodes/installs/Moondex.sh;
             show_menu;
             ;;
 
         3) clear;
-            option_picked "Option 3 Picked";
+            option_picked "Drip Masternode Picked";
         sudo bash /root/Masternodes/installs/Drip.sh;
             show_menu;
             ;;
 
         4) clear;
-            option_picked "Option 4 Picked";
+            option_picked "Rabbit Masternode Picked";
         sudo bash /root/Masternodes/installs/Rabbit.sh;
             show_menu;
             ;;
 
         5) clear;
-            option_picked "Option 5 Picked";
+            option_picked "BTCMonster Masternode Picked";
         sudo bash /root/Masternodes/installs/BTCMonster.sh
             show_menu;
             ;;
 
         6) clear;
-            option_picked "Option 6 Picked";
+            option_picked "Rane Masternode Picked";
         sudo bash /root/Masternodes/installs/Rane.sh
             show_menu;
             ;;
         7) clear;
-            option_picked "Option 7 Picked";
+            option_picked "Dextro MasternodePicked";
         sudo bash /root/Masternodes/installs/Dextro.sh
             show_menu;
             ;;
+        8) clear;
+            option_picked "Bhash Masternode Picked";
+        sudo bash /root/Masternodes/installs/Dextro.sh
+            show_menu;
+            ;;
+
 
         x)exit;
         ;;
@@ -76,7 +83,7 @@ while [ opt != '' ]
         ;;
 
         *)clear;
-        option_picked "Pick an option from the menu";
+        option_picked "Pick the Masternode Coin you would like to install from the menu";
         show_menu;
         ;;
     esac
