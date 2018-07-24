@@ -16,6 +16,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 6)${MENU} RANE ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 7)${MENU} DEXTRO ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 8)${MENU} BHASH ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 9)${MENU} PRINTEX ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please choose a Masternode to install and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
@@ -74,7 +75,11 @@ while [ opt != '' ]
         sudo bash /root/Masternodes/installs/Bhash.sh
             show_menu;
             ;;
-
+        9) clear;
+            option_picked "Printex Masternode Picked";
+        sudo bash /root/Masternodes/installs/Printex.sh
+            show_menu;
+            ;;
 
         x)exit;
         ;;
