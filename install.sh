@@ -18,6 +18,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 8)${MENU} BHASH ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 9)${MENU} PRINTEX ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 10)${MENU} GAMBLECOIN ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 10)${MENU} ELLIOT ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please choose a Masternode to install and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
@@ -85,6 +86,12 @@ while [ opt != '' ]
         10) clear;
             option_picked "Gamblecoin Masternode Picked";
         sudo bash /root/Masternodes/installs/Gamblecoin.sh
+            show_menu;
+            ;;
+            
+            11) clear;
+            option_picked "Elliot Masternode Picked";
+        sudo bash /root/Masternodes/installs/Elli.sh
             show_menu;
             ;;
 
