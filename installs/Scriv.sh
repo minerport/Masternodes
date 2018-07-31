@@ -1,23 +1,23 @@
 #!/bin/bash
 
-CONFIG_FILE='mogwai.conf'
-CONFIGFOLDER='/root/.mogwaicore'
-CONFIGFOLDER2='/root/.mogwaicore2'
-CONFIGFOLDER3='/root/.mogwaicore3'
-COIN_DAEMON='/root/Masternodes/mogwaicore-0.12.2/bin/mogwaid'
-COIN_CLI='/root/Masternodes/mogwaicore-0.12.2/bin/mogwai-cli'
-COIN_DAEMON2='mogwaid'
-COIN_CLI2='mogwai-cli'
+CONFIG_FILE='scriv.conf'
+CONFIGFOLDER='/root/.scrivcore'
+CONFIGFOLDER2='/root/.scrivcore2'
+CONFIGFOLDER3='/root/.scrivcore3'
+COIN_DAEMON='/root/Masternodes/scrivd'
+COIN_CLI='/root/Masternodes/scriv-cli'
+COIN_DAEMON2='scrivd'
+COIN_CLI2='scriv-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/mogwaicoin/mogwai/releases/download/v0.12.2.4/mogwaicore-0.12.2.4-linux64.tar.gz'
-COIN_ZIP='/root/Masternodes/mogwaicore-0.12.2.4-linux64.tar.gz'
-COIN_NAME='Mogwai'
-COIN_NAME2='Mogwai2'
-COIN_NAME3='Mogwai3'
-COIN_PORT=17777
-RPC_PORT=17710
-RPC_PORT2=17711
-RPC_PORT3=17712
+COIN_TGZ='https://github.com/ScrivNetwork/scriv/releases/download/1.1.0/Scriv-Linux-x86-1.1.0.0.zip'
+COIN_ZIP='/root/Masternodes/Scriv-Linux-x86-1.1.0.0.zip'
+COIN_NAME='Scriv'
+COIN_NAME2='Scriv2'
+COIN_NAME3='Scriv3'
+COIN_PORT=7979
+RPC_PORT=12457
+RPC_PORT2=12458
+RPC_PORT3=12459
 
 NODEIP=$(curl -s4 api.ipify.org)
 NODEIP2=$(curl -s4 api.ipify.org)
@@ -33,7 +33,7 @@ function download_node() {
   echo -e "Preparing to download ${GREEN}$COIN_NAME${NC}."
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP
+  unzip $COIN_ZIP
   chmod +x $COIN_DAEMON $COIN_CLI
   chown root: $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_PATH
