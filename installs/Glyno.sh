@@ -44,7 +44,7 @@ function download_node() {
   echo -e "Preparing to download ${GREEN}$COIN_NAME${NC}."
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP
+  tar xf $COIN_ZIP
   chmod +x $COIN_DAEMON $COIN_CLI
   chown root: $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_PATH
