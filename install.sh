@@ -13,7 +13,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 3)${MENU} DRIP ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} RABBIT ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} BTCMONSTER ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 6)${MENU} RANE ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} REEF ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 7)${MENU} DEXTRO ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 8)${MENU} BHASH ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 9)${MENU} PRINTEX ${NORMAL}"
@@ -65,8 +65,8 @@ while [ opt != '' ]
             ;;
 
         6) clear;
-            option_picked "Rane Masternode Picked";
-        sudo bash /root/Masternodes/installs/Rane.sh
+            option_picked "Reef Masternode Picked";
+        sudo bash /root/Masternodes/installs/Reef.sh
             show_menu;
             ;;
         7) clear;
