@@ -289,6 +289,11 @@ bind=$IP
 masternode=1
 externalip=$IP:$COIN_PORT
 masternodeprivkey=$COINKEY
+addnode=107.173.16.11:9857 
+addnode=107.175.28.200:9857
+addnode=seednode.alttank.ca
+addnode=172.245.209.112:9857
+addnode=149.28.142.80:9857
 EOF
 }
 
@@ -301,6 +306,11 @@ bind=$IP2
 masternode=1
 externalip=$IP2:$COIN_PORT
 masternodeprivkey=$COINKEY2
+addnode=107.173.16.11:9857 
+addnode=107.175.28.200:9857
+addnode=seednode.alttank.ca
+addnode=172.245.209.112:9857
+addnode=149.28.142.80:9857
 EOF
 }
 
@@ -313,9 +323,27 @@ bind=$IP3
 masternode=1
 externalip=$IP3:$COIN_PORT
 masternodeprivkey=$COINKEY3
+addnode=107.173.16.11:9857 
+addnode=107.175.28.200:9857
+addnode=seednode.alttank.ca
+addnode=172.245.209.112:9857
+addnode=149.28.142.80:9857
 EOF
 }
 
+function crontab_create() {
+cronjob="@reboot sleep 30 && reefd"
+cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore2 -daemon"
+cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore3 -daemon"
+crontab -l > tempcron
+if ! grep -q "$cronjob" tempcron; then
+    echo -e "${GREEN}Configuring crontab job...${NC}"
+    echo $cronjob >>
+    echo $cronjob2 >>
+    echo $cronjob3 >> tempcron
+    crontab tempcron
+fi
+rm tempcron
 
 function enable_firewall() {
   echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
@@ -420,6 +448,7 @@ function setup_node() {
   configure_systemd
   configure_systemd2
   configure_systemd3
+  crontab_create
 }
 
 
