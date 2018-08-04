@@ -331,20 +331,20 @@ addnode=149.28.142.80:9857
 EOF
 }
 
-function crontab_create() {
-cronjob="@reboot sleep 30 && reefd"
-cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore2 -daemon"
-cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore3 -daemon"
-crontab -l > tempcron
-if ! grep -q "$cronjob" tempcron; then
-    echo -e "${GREEN}Configuring crontab job...${NC}"
-    echo $cronjob
-    echo $cronjob2
-    echo $cronjob3 >> tempcron
-    crontab tempcron
-fi
-rm tempcron
-}
+#function crontab_create() {
+3cronjob="@reboot sleep 30 && reefd"
+#cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore2 -daemon"
+#cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore3 -daemon"
+#crontab -l > tempcron
+#if ! grep -q "$cronjob" tempcron; then
+#    echo -e "${GREEN}Configuring crontab job...${NC}"
+#    echo $cronjob
+#    echo $cronjob2
+#    echo $cronjob3 >> tempcron
+#    crontab tempcron
+#fi
+#rm tempcron
+#}
 function enable_firewall() {
   echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
@@ -448,7 +448,7 @@ function setup_node() {
   configure_systemd
   configure_systemd2
   configure_systemd3
-  crontab_create
+#  crontab_create
 }
 
 
