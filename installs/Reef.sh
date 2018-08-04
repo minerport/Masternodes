@@ -338,8 +338,8 @@ cronjob="@reboot sleep 30 && reefd -datedir=/root/.reefcore3 -daemon"
 crontab -l > tempcron
 if ! grep -q "$cronjob" tempcron; then
     echo -e "${GREEN}Configuring crontab job...${NC}"
-    echo $cronjob >>
-    echo $cronjob2 >>
+    echo $cronjob
+    echo $cronjob2
     echo $cronjob3 >> tempcron
     crontab tempcron
 fi
