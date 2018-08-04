@@ -344,7 +344,7 @@ if ! grep -q "$cronjob" tempcron; then
     crontab tempcron
 fi
 rm tempcron
-
+}
 function enable_firewall() {
   echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
