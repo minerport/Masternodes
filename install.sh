@@ -20,7 +20,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 10)${MENU} GAMBLECOIN ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 11)${MENU} ELLIOT ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} GLYNO ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 13)${MENU} SCRIV ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 13)${MENU} GRAVIUM ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please choose a Masternode to install and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
@@ -103,8 +103,8 @@ while [ opt != '' ]
             show_menu;
             ;;
             13) clear;
-            option_picked "Scriv Masternode Picked";
-        sudo bash /root/Masternodes/installs/Scriv.sh
+            option_picked "Gravium Masternode Picked";
+        sudo bash /root/Masternodes/installs/Gravium.sh
             show_menu;
             ;;
 
